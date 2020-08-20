@@ -59,7 +59,7 @@ module.exports = function setup(app) {
   app.post('/api/mail', upload, (req, res) => {
     try {
       let message = {}
-      let signature = '\n' + (req.cookies.login !== undefined ? req.cookies.login : (req.signedCookies.login !== undefined ? req.signedCookies.login : 'unknown')) + '\n';
+      let signature = '\n' + (req.cookies.login !== undefined ? req.cookies.login : (req.signedCookies.login !== undefined ? req.signedCookies.login : 'unknown'));
       if (req.files.photos !== undefined) {
         message = {
           to: req.body.email,
